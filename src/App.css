@@ -24,6 +24,11 @@
   color: white;
 }
 
+span.badge.bg-primary{
+  background-color: orange!important;
+  position: relative ! important;
+
+}
 .App-link {
   color: #61dafb;
 }
