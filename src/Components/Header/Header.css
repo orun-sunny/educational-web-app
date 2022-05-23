@@ -2,3 +2,6 @@ Badge-color{
     background-color: rgb(202, 221, 26)!important;
     position: relative!important;
 }
+Link {
+    text-decoration: none;
+}
