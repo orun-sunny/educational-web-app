@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../Hook/useAuth';
 
 const Login = () => {
+  const {signInWithGoogle} = useAuth() 
     return (
         <div className="text-center my-4">
       <h2>Please Login</h2>

@@ -10,11 +10,13 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import PageNotFound from "./Pages/PageNotFound";
 import Header from "./Components/Header/Header";
+import AuthProvider from "./contexts/AuthProvider";
 
 
 function App() {
   return (
     <div>
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
       
@@ -34,6 +36,7 @@ function App() {
         
       </Routes>
       </BrowserRouter>
+      </AuthProvider>
   
     </div>
   );

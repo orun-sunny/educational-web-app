@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import firebaseInitialize from '../firebase/firebase.init';
 
@@ -9,8 +9,7 @@ const auth = getAuth();
 
 const useFirebase = () => {
     function signInWithGoogle (){
-        signInWithPopup(auth, googleProvider)
-        .then(res => {
+        signInWithPopup(auth, googleProvider).then(res => {
             console.log(res.user)
         });
 
