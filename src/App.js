@@ -11,6 +11,7 @@ import SignUp from "./Pages/SignUp";
 import PageNotFound from "./Pages/PageNotFound";
 import Header from "./Components/Header/Header";
 import AuthProvider from "./contexts/AuthProvider";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
        
         
       </Routes>
+      <Footer></Footer>
       </BrowserRouter>
       </AuthProvider>
   
