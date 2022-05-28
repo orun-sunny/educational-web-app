@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Badge, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../../images/logo.png";
-import css from "./Header.css"
+// import css from "./Header.css"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';

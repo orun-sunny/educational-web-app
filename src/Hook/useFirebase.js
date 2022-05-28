@@ -1,27 +1,36 @@
 
-import { signOut, getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider,signOut, getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react";
 import firebaseInitialize from '../firebase/firebase.init';
 
 firebaseInitialize()
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
-    //google sign in
-    function signInWithGoogle() {
-        signInWithPopup(auth, googleProvider).then(res => {
-            setUser(res.user);
-        }).catch(err => {
-            setError(err.message)
-
-        });
 
 
-    }
+      //google sign in
+    const signInWithGoogle = () => {
+      return signInWithPopup(auth, googleProvider);
+    };
+
+       //github sign in
+  const signInWithGithub = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((err) => {
+        const errorMessage = err.message;
+        setError(errorMessage);
+      });
+  };
     //get the current user 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (signedInUser) => {
@@ -55,7 +64,8 @@ const useFirebase = () => {
 
 
 
-    return { logOut,signInWithGoogle, user, error };
+    return { logOut,signInWithGoogle, signInWithGithub, user, error };
 };
+
 
 export default useFirebase;
